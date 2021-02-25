@@ -1,6 +1,6 @@
 const apiKey = "c39c525c5d9e071320ceb9a9d74f8d38";
 let searchedCities = [];
-// initial function fired when user clicks search button, event listener on line 40
+// initial function fired when user clicks search button, event listener on search button
 function getWeather(cityName){
 
     let cityURL = 'https://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&appid=' + apiKey + '&units=imperial';        
@@ -36,14 +36,13 @@ function getWeather(cityName){
             // searchedCities = JSON.parse(localStorage.getItem('searchHistory'));
             if(!searchedCities.includes(cityName)){
 
-                saveToList(cityName);       
+            saveToList(cityName);       
             }
         })
     })
 };
 
-$('#search-button').on('click', function(event){
-    
+$('#search-button').on('click', function(){   
     let userInput = $('#city-input').val().trim();
     getWeather(userInput);
 });
@@ -104,7 +103,7 @@ $('#clear-search-history').on('click', function(){
     localStorage.clear();
     $('#city-history').html('');
 });
-// init ran on line 110, renders searched cities list if previous data exists in localstorage 
+// init renders searched cities list if previous data exists in localstorage 
 function init(){
     var savedCities = (localStorage.getItem('searchHistory'));
     if (savedCities !== null){
@@ -114,9 +113,8 @@ function init(){
 
 init();
 // City buttons displays according city weather when clicked
-var cityButton = $('.cityBtn')
-cityButton.on('click', function(){
+
+$('.cityBtn').on('click', function(){
     console.log('buttonclicked')
-    $('#current-weather').empty();
     getWeather($(this).html());
 });
