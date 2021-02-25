@@ -114,7 +114,7 @@ function init(){
 init();
 // City buttons displays according city weather when clicked
 
-$('.cityBtn').on('click', function(){
+$('#city-history').on('click','.cityBtn', function(){
     console.log('buttonclicked')
     getWeather($(this).html());
 });
