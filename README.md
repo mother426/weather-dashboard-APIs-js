@@ -19,4 +19,4 @@ User searches are persisted through localstorage. List of saved cities persists 
 
 ## Installation and Usage 
 
-Demo for this application is available at the deployed site hosted by github pages. [Link to Deployed Application.]()
+Demo for this application is available at the deployed site hosted by github pages. [Link to Deployed Application.](https://mother426.github.io/weather-dashboard-APIs-js/)
